@@ -1,0 +1,42 @@
+MascaraMonetaria
+================
+
+Plugin/Gem para usar em suas classes e ter métodos usando mascaras monetárias
+
+
+Example
+=======
+
+class Salario
+  include MascaraMonetaria
+  attr_accessor :valor, :valor_de_ferias
+  usar_com_moeda [:valor,:valor_de_ferias]
+end
+
+##
+
+salario = Salario.new
+salario.valor = 123.56
+salario.valor_de_ferias = 1765.98
+salario.valor_mask # R$ 123,56
+salario.valor_de_ferias_mask # R$ 1.765,98
+
+
+
+=== Com ActiveRecord
+
+class Usuario < ActiveRecord::Base
+  usar_com_moeda :salario
+end
+
+usuario = Usuario.new
+usuario.salario_mask = "R$ 130,47"
+usuario.salario # 13047
+usuario.salario_f # 130.47
+
+
+
+
+
+Copyright (c) 2010 [foolkgs@jera.com.br], released under the MIT license
+jera.com.br
