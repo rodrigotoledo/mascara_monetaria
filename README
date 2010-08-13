@@ -18,9 +18,14 @@ end
 salario = Salario.new
 salario.valor = 123.56
 salario.valor_de_ferias = 1765.98
+
+# Saida formatada para real
 salario.valor_mask # R$ 123,56
 salario.valor_de_ferias_mask # R$ 1.765,98
 
+# Saida modificando unidade
+salario.valor_mask(:unit => "$") # $123,56
+salario.valor_de_ferias_mask(:unit => "$") # $1.765,98
 
 
 === Com ActiveRecord
