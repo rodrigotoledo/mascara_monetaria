@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__),"currency")
 module MascaraMonetaria
 
-  VERSION = "0.0.1"
+  VERSION = "0.1.0"
   # author:
   #   agc.rodrigo@gmail.com
   #   erick.pereira86@gmail.com
